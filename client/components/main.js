@@ -1,27 +1,19 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import Header from './header'
-
-const DashboardMain = () => {
+const Main = () => {
+  const [input, setInput] = useState('')
+  const onChange = (e) => setInput(e.target.value)
   return (
     <div>
-      <Header />
-
-      <div className="flex items-center justify-center h-screen">
-        <div className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
-          <div id="title">Main</div>
-
-          <Link to="/dashboard/profile/d47f32f5-a80b-4798-8674-54ed17711f2c"> Go To Profile</Link>
-
-          <Link to="/dashboard"> Go To Root</Link>
-        </div>
-      </div>
+      <input id="input-field" type="text" value={input} onChange={onChange} />
+      <Link id="search-button" to={`/${input}`}>
+        Search
+      </Link>
     </div>
   )
 }
 
-DashboardMain.propTypes = {}
+Main.propTypes = {}
 
-export default DashboardMain
+export default Main
