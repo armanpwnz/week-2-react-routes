@@ -1,4 +1,4 @@
-# SkillCrucial React Redux boilerplate
+# Boilerplate 
 
 ## Quick start
 
